@@ -183,9 +183,10 @@ button:hover {
 #result strong {
     font-weight: bold;
 } 
-.logo{ 
-    width:80;
-    height:auto;
-    display:block; 
-    margin:0 auto 10px;
+.logo{
+    width: 120px !important;
+    max-width: 120px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto 15px;
 }
