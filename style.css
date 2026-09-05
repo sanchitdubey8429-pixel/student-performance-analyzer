@@ -184,8 +184,8 @@ button:hover {
     font-weight: bold;
 } 
 .logo{ 
-    width:110;
+    width:80;
     height:auto;
     display:block; 
-    margin:0 auto 15px;
+    margin:0 auto 10px;
 }
