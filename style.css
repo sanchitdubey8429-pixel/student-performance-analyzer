@@ -297,3 +297,86 @@ body.dark-mode h2 {
 body {
     padding-top: 55px;
 }
+/* 📱 Mobile Responsive Design */
+@media (max-width: 600px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-screen {
+        width: 100%;
+        min-height: 280px;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .welcome-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .welcome-content img {
+        width: 180px !important;
+        max-width: 70%;
+        height: auto;
+    }
+
+    .welcome-content h1 {
+        font-size: 28px;
+    }
+
+    .welcome-content p {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 420px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        width: 100px !important;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .subject-row {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .subject-row input {
+        min-width: 0;
+        width: 50%;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #dark-mode-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+    }
+
+    #result {
+        width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+    }
+}
