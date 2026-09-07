@@ -118,3 +118,30 @@ function printResult() {
 
     container.appendChild(row);
 });
+function downloadResult() {
+    const result = document.getElementById("result");
+
+    if (result.innerHTML.trim() === "") {
+        alert("Please calculate the result first!");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    pdf.setFontSize(20);
+    pdf.text("Student Performance Analyzer", 20, 20);
+
+    pdf.setFontSize(12);
+
+    const lines = result.innerText.split("\n");
+    let y = 35;
+
+    lines.forEach(line => {
+        pdf.text(line, 20, y);
+        y += 10;
+    });
+
+    pdf.save("Student-Performance-Result.pdf");
+}
+ 

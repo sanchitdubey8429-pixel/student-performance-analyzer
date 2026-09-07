@@ -30,13 +30,14 @@ style="width:120px!important;">
 <button type="button" id="add-subject">+ Add Subject</button>
         <button onclick="calculateResult()">Calculate Result</button>
 <button onclick="resetForm()">Clear</button> 
-<button onclick="printResult()">Print Result</button>
+<button onclick="printResult()">Print Result</button> 
+<button onclick="downloadResult()">Download Result</button>
         <div id="result"></div>
 <div class="progress-container">
     <div id="progress-bar"></div>
 </div>
     </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 
 </body>
