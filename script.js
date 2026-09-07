@@ -81,7 +81,37 @@ function calculateResult() {
         subjectPerformance;
 
     document.getElementById("progress-bar").style.width = percentage + "%";
+const chartBars = document.getElementById("chart-bars");
+chartBars.innerHTML = "";
 
+for (const row of subjectRows) {
+    const subjectName = row.querySelector(".subject-name").value;
+    const marks = Number(row.querySelector(".subject-marks").value);
+
+    const bar = document.createElement("div");
+    bar.className = "chart-bar";
+
+    bar.innerHTML = `
+        <span>${subjectName}</span>
+        <div class="bar-background">
+            <div class="bar-fill" style="width: ${marks}%">
+                ${marks}
+            </div>
+        </div>
+    `;
+
+    chartBars.appendChild(bar);
+}
+const savedResults = JSON.parse(localStorage.getItem("studentResults")) || [];
+
+savedResults.push({
+    name: name,
+    roll: roll,
+    percentage: percentage.toFixed(2),
+    grade: grade
+});
+
+localStorage.setItem("studentResults", JSON.stringify(savedResults));
     if (percentage >= 50) {
         document.getElementById("result").style.borderColor = "green";
     } else {
@@ -182,5 +212,23 @@ function shareResult() {
         navigator.clipboard.writeText(shareText);
         alert("Result copied! You can paste it anywhere.");
     }
-}
+} 
+document.getElementById("view-history").addEventListener("click", () => {
+    const history = JSON.parse(localStorage.getItem("studentResults")) || [];
+    const historyDiv = document.getElementById("history");
+
+    if (history.length === 0) {
+        historyDiv.innerHTML = "<p>No saved results yet.</p>";
+        return;
+    }
+
+    historyDiv.innerHTML = history.map((item, index) => `
+        <div class="history-item">
+            <strong>${item.name}</strong><br>
+            Roll No: ${item.roll}<br>
+            Percentage: ${item.percentage}%<br>
+            Grade: ${item.grade}
+        </div>
+    `).join("");
+});
  
