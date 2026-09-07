@@ -142,6 +142,45 @@ function downloadResult() {
         y += 10;
     });
 
-    pdf.save("Student-Performance-Result.pdf");
+    pdf.save("Student-Performance-Result.pdf"); } 
+    setTimeout(() => {
+    const welcome = document.getElementById("welcome-screen");
+
+    welcome.style.opacity = "0";
+
+    setTimeout(() => {
+        welcome.style.display = "none";
+    }, 800);
+}, 2500); 
+const themeButton = document.getElementById("theme-toggle");
+
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        themeButton.innerHTML = "☀️ Day Mode";
+    } else {
+        themeButton.innerHTML = "🌙 Dark Mode";
+    }
+});
+function shareResult() {
+    const result = document.getElementById("result");
+
+    if (result.innerText.trim() === "") {
+        alert("Please calculate the result first!");
+        return;
+    }
+
+    const shareText = "Student Performance Analyzer Result\n\n" + result.innerText;
+
+    if (navigator.share) {
+        navigator.share({
+            title: "Student Result",
+            text: shareText
+        });
+    } else {
+        navigator.clipboard.writeText(shareText);
+        alert("Result copied! You can paste it anywhere.");
+    }
 }
  

@@ -6,6 +6,14 @@
 </head>
 
 <body>
+ <div id="welcome-screen">
+    <div class="welcome-content">
+        <img src="images/spa logo.png" alt="SPA Logo">
+        <h1>Welcome 🎓</h1>
+        <p>Student Performance Analyzer</p>
+    </div>
+</div>  
+<button id="theme-toggle">🌙 Dark Mode</button> 
 <img src="images/spa logo.png" 
 alt="SPA Logo" class="logo" 
 style="width:120px!important;">
@@ -31,6 +39,7 @@ style="width:120px!important;">
         <button onclick="calculateResult()">Calculate Result</button>
 <button onclick="resetForm()">Clear</button> 
 <button onclick="printResult()">Print Result</button> 
+<button onclick="shareResult()">📤 Share Result</button>
 <button onclick="downloadResult()">Download Result</button>
         <div id="result"></div>
 <div class="progress-container">
