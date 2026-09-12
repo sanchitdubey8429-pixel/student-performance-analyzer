@@ -79,7 +79,7 @@ function calculateResult() {
         "Status: " + (percentage >= 50 ? "PASS" : "FAIL") + "<br>" +
         "Performance: " + performanceMessage + "<br><br>" +
         subjectPerformance;
-
+document.getElementById("result-popup").style.display = "flex";
     document.getElementById("progress-bar").style.width = percentage + "%";
 const chartBars = document.getElementById("chart-bars");
 chartBars.innerHTML = "";
@@ -230,5 +230,18 @@ document.getElementById("view-history").addEventListener("click", () => {
             Grade: ${item.grade}
         </div>
     `).join("");
-});
+}); 
+function closeResult() {
+    document.getElementById("result-popup").style.display = "none";
+} 
+function showPerformance() {
+    const result = document.getElementById("result");
+
+    if (result.innerHTML.trim() === "") {
+        alert("Please calculate the result first!");
+        return;
+    }
+
+    alert("Student Performance\n\n" + result.innerText);
+}
  

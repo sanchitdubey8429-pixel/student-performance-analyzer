@@ -13,13 +13,13 @@
         <p>Student Performance Analyzer</p>
     </div>
 </div>  
-<button id="theme-toggle">🌙 Dark Mode</button> 
-<img src="images/spa logo.png" 
-alt="SPA Logo" class="logo" 
-style="width:120px!important;">
+<div class="site-title">
+    <img src="images/spa logo.png" alt="SPA Logo" class="logo">
     <h1>Student Performance Analyzer</h1>
+</div>
 
     <div class="container">
+    <button id="theme-toggle">🌙 Dark Mode</button>
 <h2>Enter Students Details & Marks</h2>
         <label>Student Name</label>
         <input type="text" id="name" placeholder="Enter student name">
@@ -41,9 +41,16 @@ style="width:120px!important;">
 <button onclick="printResult()">Print Result</button> 
 <button onclick="shareResult()">📤 Share Result</button>
 <button onclick="downloadResult()">Download Result</button>
-        <div id="result"></div> 
+     <div id="result-popup" class="result-popup">
+    <div class="result-box">
+        <button class="close-result" onclick="closeResult()">✕</button>
+        <h2>🎓 Student Result</h2>
+        <div id="result"></div>
+    </div>
+</div>   
         <button id="view-history">📚 View History</button>
-<div id="history"></div>
+        <button onclick="showPerformance()">📊 Student Performance</button>
+<div id="history"></div> 
         <div id="performance-chart">
     <h3>📊 Subject Performance</h3>
     <div id="chart-bars"></div>
