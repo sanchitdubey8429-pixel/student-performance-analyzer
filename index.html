@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body> 
+    <canvas id="particle-canvas"></canvas>
  <div id="welcome-screen">
     <div class="welcome-content">
         <img src="images/spa logo.png" alt="SPA Logo">
@@ -19,7 +20,13 @@
 </div>
 
     <div class="container">
-    <button id="theme-toggle">🌙 Dark Mode</button>
+    <button id="theme-toggle">
+    <span class="toggle-icon">🌙</span>
+    <span class="toggle-text">Dark Mode</span>
+    <span class="toggle-switch">
+        <span class="toggle-circle"></span>
+    </span>
+</button>
 <h2>Enter Students Details & Marks</h2>
         <label>Student Name</label>
         <input type="text" id="name" placeholder="Enter student name">

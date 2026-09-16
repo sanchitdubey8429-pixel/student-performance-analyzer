@@ -547,4 +547,195 @@ body {
     width: auto !important;
     margin: 0 !important;
     z-index: 99999 !important;
+} 
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+/* Dark Interactive Background */
+body {
+    background: #020817 !important;
+    color: white;
+}
+
+#particles-js {
+    background: linear-gradient(135deg, #071a4a, #123c8c, #24105c) !important;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(10px);
+}
+
+.site-title h1,
+.site-title p,
+label {
+    color: white !important;
+}
+#particles-js canvas {
+    opacity: 0.9 !important;
+} 
+body {
+    background-size: 400% 400% !important;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} 
+.container {
+    background: rgba(15, 23, 42, 0.82) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.container h2,
+.container label {
+    color: white !important;
+}
+/* ===== PREMIUM DARK PARTICLE BACKGROUND ===== */
+
+body {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0, 110, 255, 0.35), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(140, 0, 255, 0.30), transparent 35%),
+        linear-gradient(135deg, #020817, #061b4f, #0b1f63, #170b45) !important;
+    background-size: 200% 200% !important;
+    animation: darkBackground 12s ease infinite !important;
+}
+
+@keyframes darkBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Particle layer */
+#particles-js {
+    background: transparent !important;
+}
+
+#particles-js canvas {
+    opacity: 1 !important;
+} 
+/* ===== DARK MODE SWITCH ===== */
+
+#theme-toggle {
+    position: absolute !important;
+    top: 20px !important;
+    right: 25px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    padding: 8px 12px !important;
+    border: none !important;
+    border-radius: 30px !important;
+
+    background: rgba(10, 20, 60, 0.85) !important;
+    color: white !important;
+
+    cursor: pointer;
+    z-index: 99999 !important;
+
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.5);
+}
+
+.toggle-switch {
+    width: 42px;
+    height: 22px;
+    border-radius: 20px;
+    background: #555;
+    position: relative;
+    display: inline-block;
+}
+
+.toggle-circle {
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+/* Dark mode ON */
+body.dark-mode .toggle-switch {
+    background: #168cff;
+}
+
+body.dark-mode .toggle-circle {
+    left: 22px;
+} 
+/* Beautiful dark-blue particle background */
+body {
+    background: linear-gradient(135deg, #071a3d, #102b72, #32145f, #071a3d);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} 
+/* Glowing particle effect */
+#particles-js {
+    filter: drop-shadow(0 0 6px #66ccff);
+}
+
+#particles-js canvas {
+    opacity: 0.9;
+} 
+/* Fix Dark Mode button position */
+#theme-toggle {
+    position: absolute !important;
+    top: 10px !important;
+    right: 5px !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 130px !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 99999 !important;
+} 
+#theme-toggle {
+    width: 140px !important;
+    height: 40pxpx !important;
+    padding: 8px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    font-size: 15px !important;
 }
