@@ -738,4 +738,9 @@ body {
     justify-content: space-between !important;
     gap: 10px !important;
     font-size: 15px !important;
+} 
+/* Remove ON/OFF switch completely */
+.toggle-switch,
+.toggle-circle {
+    display: none !important;
 }
