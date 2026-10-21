@@ -328,5 +328,118 @@ function animateParticles() {
     requestAnimationFrame(animateParticles);
 }
 
-animateParticles();
+animateParticles(); 
+
+
+document.getElementById("ask-ai").addEventListener("click", function () {
+    const question = document.getElementById("ai-question").value.trim().toLowerCase();
+    const response = document.getElementById("ai-response");
+
+    const subjectNames = document.querySelectorAll(".subject-name");
+    const subjectMarks = document.querySelectorAll(".subject-marks");
+
+    const subjects = [];
+
+    subjectNames.forEach((input, index) => {
+        const name = input.value.trim();
+        const marks = Number(subjectMarks[index]?.value);
+
+        if (
+            name &&
+            subjectMarks[index]?.value.trim() !== "" &&
+            Number.isFinite(marks) &&
+            marks >= 0 &&
+            marks <= 100
+        ) {
+            subjects.push({ name, marks });
+        }
+    });
+
+    if (!question) {
+        response.textContent = "Please type a question first.";
+        return;
+    }
+
+    if (subjects.length === 0) {
+        response.textContent =
+            "Please enter subject names and marks (0-100) first, then ask me again.";
+        return;
+    }
+
+    const total = subjects.reduce((sum, subject) => sum + subject.marks, 0);
+    const percentage = total / subjects.length;
+
+    const sorted = [...subjects].sort((a, b) => a.marks - b.marks);
+    const weakest = sorted[0];
+    const strongest = sorted[sorted.length - 1];
+
+    let answer = "";
+
+    if (
+        question.includes("weak") ||
+question.includes("improve") ||
+question.includes("kam marks") ||
+question.includes("weakest") ||
+question.includes("weak subject") ||
+question.includes("sabse kam") ||
+question.includes("sabse weak") ||
+question.includes("kamzor") ||
+question.includes("कमजोर") ||
+question.includes("सबसे कम") ||
+question.includes("कम अंक")
+    ) {
+        answer = `Your subject to focus on first is ${weakest.name} (${weakest.marks}/100). Try revising its key concepts, practising questions, and reviewing mistakes regularly.`;
+    } else if (
+        question.includes("strong") ||
+        question.includes("best subject") ||
+        question.includes("highest")
+    ) {
+        answer = `Your highest-scoring subject is ${strongest.name} (${strongest.marks}/100). Keep practising to maintain this progress.`;
+    } else if (
+    question.includes("study plan") ||
+    question.includes("timetable") ||
+    question.includes("schedule") ||
+    question.includes("time table") ||
+    question.includes("padhai ka plan") ||
+    question.includes("padhai kaise karu") ||
+    question.includes("पढ़ाई का प्लान") ||
+    question.includes("टाइम टेबल")
+) {
+         
+const hours = Number(document.getElementById("ai-hours").value);
+
+if (!Number.isFinite(hours) || hours < 1 || hours > 16) {
+    response.textContent = "Please enter study hours between 1 and 16.";
+    return;
+}
+
+const totalMinutes = Math.round(hours * 60);
+const weakMinutes = Math.round(totalMinutes * 0.4);
+const practiceMinutes = Math.round(totalMinutes * 0.3);
+const otherMinutes = Math.round(totalMinutes * 0.2);
+const revisionMinutes = totalMinutes - weakMinutes - practiceMinutes - otherMinutes;
+
+answer = `Your personalized ${hours}-hour study plan:
+
+1. ${weakest.name} concepts: ${weakMinutes} minutes
+2. ${weakest.name} practice: ${practiceMinutes} minutes
+3. Other subjects: ${otherMinutes} minutes
+4. Revision and mistake review: ${revisionMinutes} minutes
+
+Start with your lowest-scoring subject and take short breaks when needed.`;
+    } else if (
+        question.includes("percentage") ||
+        question.includes("overall") ||
+        question.includes("performance") ||
+        question.includes("analyse") ||
+        question.includes("analyze") ||
+        question.includes("marks")
+    ) {
+        answer = `Your average percentage is ${percentage.toFixed(1)}% across ${subjects.length} subject(s).\n\nHighest: ${strongest.name} (${strongest.marks}/100).\nNeeds more attention: ${weakest.name} (${weakest.marks}/100).\n\nRecommendation: practise questions from your lowest-scoring subject and track your progress weekly.`;
+    } else {
+        answer = `I can help with your marks! Try asking:\n\n• Which subject is weakest?\n• Which is my strongest subject?\n• Analyse my performance.\n• Make a study plan.`;
+    }
+
+    response.textContent = "🤖 Performance Assistant\n\n" + answer;
+});
  

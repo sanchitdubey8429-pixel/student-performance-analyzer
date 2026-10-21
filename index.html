@@ -65,7 +65,33 @@
 <div class="progress-container">
     <div id="progress-bar"></div>
 </div>
-    </div>
+    </div> 
+    
+<div id="ai-assistant">
+    <h2>🤖 AI Performance Assistant</h2>
+    <p>Ask questions about your academic performance.</p>
+
+    <textarea
+        id="ai-question"
+        placeholder="Ask about your marks, weak subjects, or study plan..."
+        rows="3"
+    ></textarea>
+
+<label for="ai-hours">Daily study hours:</label>
+<input
+    type="number"
+    id="ai-hours"
+    min="1"
+    max="16"
+    value="3"
+    placeholder="Enter daily study hours"
+>
+    <button type="button" id="ask-ai">
+        Ask AI
+    </button>
+
+    <div id="ai-response"></div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 
